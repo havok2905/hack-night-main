@@ -13,4 +13,4 @@ var JobSchema = new Schema({
   python:     { type: Number,   required: true }
 });
 
-module.exports = mongoose.model('my-schema', MySchema);
+module.exports = mongoose.model('jobSchema', JobSchema);
