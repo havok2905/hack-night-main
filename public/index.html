@@ -14,6 +14,28 @@
       <script src='js/serializerFactory.js'></script>
   </head>
   <body ng-controller='mainController'>
-    <!-- App goes here -->
+    <h1>Neo Reach Hack Project</h1>
+
+    <h2>Compare</h2>
+
+    <h2>Jobs</h2>
+    <ul>
+      <li ng-repeat='(index, job) in jobs'>
+        <ul>
+          <li>ID: <span ng-bind='job._id'></span></li>
+          <li>Name: <span ng-bind='job.name'></span></li>
+          <li>html: <span ng-bind='job.html'></span></li>
+          <li>css: <span ng-bind='job.css'></span></li>
+          <li>javascript: <span ng-bind='job.javascript'></span></li>
+          <li>php: <span ng-bind='job.php'></span></li>
+          <li>ruby: <span ng-bind='job.ruby'></span></li>
+          <li>java: <span ng-bind='job.java'></span></li>
+          <li>c: <span ng-bind='job.c'></span></li>
+          <li>python: <span ng-bind='job.python'></span></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Create Job</h2>
   </body>
 </html>
