@@ -8,7 +8,7 @@ var methodOverride = require('method-override');
 var app            = express();
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost/MeanMapApp');
+mongoose.connect('mongodb://localhost/HackNightApp');
 
 // Express Configuration
 app.use(express.static(__dirname + '/public'));                 // sets the static files location to public
