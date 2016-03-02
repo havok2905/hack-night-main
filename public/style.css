@@ -1,0 +1,97 @@
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  position: relative;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 15px 0px #000000;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: 900;
+  color: #44C2F1;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+fieldset {
+  border: none;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: bold;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+section.first {
+  background-color: #0BA191;
+  color: #FFFFFF;
+}
+
+section.second {
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+section.second h2 {
+  color: #44C2F1;
+}
+
+section.third {
+  background-color: #44C2F1;
+  color: #FFFFFF;
+}
+
+ul li {
+  font-weight: 900;
+}
+
+ul li span {
+  font-weight: normal;
+  color: #666666;
+}
+
+button {
+  border: none;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 900;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #EEEEEE;
+  cursor: pointer;
+}

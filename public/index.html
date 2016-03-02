@@ -3,6 +3,8 @@
   <head>
       <meta charset="utf-8">
       <title>MEAN Application</title>
+      <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="reset.css"/>
       <link rel="stylesheet" href="style.css"/>
       <script src="../node_modules/angular/angular.js"></script>
       <script src="../node_modules/angular-route/angular-route.js"></script>
@@ -13,84 +15,98 @@
       <script src='js/comparisonFactory.js'></script>
   </head>
   <body ng-controller='mainController'>
-    <h1>Neo Reach Hack Project</h1>
+    <header>
+      <h1>Neo Reach Hack Project</h1>
+    </header>
 
-    <h2>Compare</h2>
-    <form>
-      <fieldset>
-        <label>Username</label>
-        <input type='text' ng-model='github.username'/>
-      </fieldset>
-      <fieldset>
-        <select ng-model='github.job'>
-          <option ng-repeat='job in jobs' value='{{job._id}}'>{{job.name}}</option>
-        </select>
-      </fieldset>
-      <fieldset>
-        <button ng-click='getUserLanguages()'>Compare</button>
-      </fieldset>
-    </form>
+    <section class='first'>
+      <div class='container'>
+        <h2>Compare</h2>
+        <form>
+          <fieldset>
+            <label>Username</label>
+            <input type='text' ng-model='github.username'/>
+          </fieldset>
+          <fieldset>
+            <select ng-model='github.job'>
+              <option ng-repeat='job in jobs' value='{{job._id}}'>{{job.name}}</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <button ng-click='getUserLanguages()'>Compare</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
 
-    <h2>Jobs</h2>
-    <ul>
-      <li ng-repeat='(index, job) in jobs'>
+    <section class="second">
+      <div class='container'>
+        <h2>Jobs</h2>
         <ul>
-          <li>ID: <span ng-bind='job._id'></span></li>
-          <li>Name: <span ng-bind='job.name'></span></li>
-          <li>html: <span ng-bind='job.html'></span></li>
-          <li>css: <span ng-bind='job.css'></span></li>
-          <li>javascript: <span ng-bind='job.javascript'></span></li>
-          <li>php: <span ng-bind='job.php'></span></li>
-          <li>ruby: <span ng-bind='job.ruby'></span></li>
-          <li>java: <span ng-bind='job.java'></span></li>
-          <li>c: <span ng-bind='job.c'></span></li>
-          <li>python: <span ng-bind='job.python'></span></li>
+          <li ng-repeat='(index, job) in jobs'>
+            <ul>
+              <li>ID: <span ng-bind='job._id'></span></li>
+              <li>Name: <span ng-bind='job.name'></span></li>
+              <li>html: <span ng-bind='job.html'></span></li>
+              <li>css: <span ng-bind='job.css'></span></li>
+              <li>javascript: <span ng-bind='job.javascript'></span></li>
+              <li>php: <span ng-bind='job.php'></span></li>
+              <li>ruby: <span ng-bind='job.ruby'></span></li>
+              <li>java: <span ng-bind='job.java'></span></li>
+              <li>c: <span ng-bind='job.c'></span></li>
+              <li>python: <span ng-bind='job.python'></span></li>
+            </ul>
+          </li>
         </ul>
-      </li>
-    </ul>
+      </div>
+    </section>
 
-    <h2>Create Job</h2>
-    <form>
-      <fieldset>
-        <label>Name</label>
-        <input type='text' ng-model='jobForm.name'/>
-      </fieldset>
-      <fieldset>
-        <label>Html</label>
-        <input type='text' ng-model='jobForm.html'/>
-      </fieldset>
-      <fieldset>
-        <label>CSS</label>
-        <input type='text' ng-model='jobForm.css'/>
-      </fieldset>
-      <fieldset>
-        <label>JavaScript</label>
-        <input type='text' ng-model='jobForm.javascript'/>
-      </fieldset>
-      <fieldset>
-        <label>PHP</label>
-        <input type='text' ng-model='jobForm.php'/>
-      </fieldset>
-      <fieldset>
-        <label>Ruby</label>
-        <input type='text' ng-model='jobForm.ruby'/>
-      </fieldset>
-      <fieldset>
-        <label>Java</label>
-        <input type='text' ng-model='jobForm.java'/>
-      </fieldset>
-      <fieldset>
-        <label>C</label>
-        <input type='text' ng-model='jobForm.c'/>
-      </fieldset>
-      <fieldset>
-        <label>Python</label>
-        <input type='text' ng-model='jobForm.python'/>
-      </fieldset>
-      <fieldset>
-        <button ng-click='createJob()'>Create</button>
-      </fieldset>
-    </form>
+    <section class='third'>
+      <div class='container'>
+        <h2>Create Job</h2>
+        <form>
+          <fieldset>
+            <label>Name</label>
+            <input type='text' ng-model='jobForm.name'/>
+          </fieldset>
+          <fieldset>
+            <label>Html</label>
+            <input type='text' ng-model='jobForm.html'/>
+          </fieldset>
+          <fieldset>
+            <label>CSS</label>
+            <input type='text' ng-model='jobForm.css'/>
+          </fieldset>
+          <fieldset>
+            <label>JavaScript</label>
+            <input type='text' ng-model='jobForm.javascript'/>
+          </fieldset>
+          <fieldset>
+            <label>PHP</label>
+            <input type='text' ng-model='jobForm.php'/>
+          </fieldset>
+          <fieldset>
+            <label>Ruby</label>
+            <input type='text' ng-model='jobForm.ruby'/>
+          </fieldset>
+          <fieldset>
+            <label>Java</label>
+            <input type='text' ng-model='jobForm.java'/>
+          </fieldset>
+          <fieldset>
+            <label>C</label>
+            <input type='text' ng-model='jobForm.c'/>
+          </fieldset>
+          <fieldset>
+            <label>Python</label>
+            <input type='text' ng-model='jobForm.python'/>
+          </fieldset>
+          <fieldset>
+            <button ng-click='createJob()'>Create</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
 
   </body>
 </html>

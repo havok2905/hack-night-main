@@ -41,9 +41,10 @@ module.exports = function(app) {
     github
       .repos
       .getFromUser(request.body, function(fromUserError, fromUserResponse) {
+
         fromUserResponse.forEach(function(repo) {
           if(!languages[repo.language]) {
-            languages[repo.language] = 1;
+            languages[repo.language] = 0;
           } else {
             languages[repo.language]++;
           }
