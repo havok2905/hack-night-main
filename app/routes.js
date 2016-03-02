@@ -1,4 +1,5 @@
 var mongoose  = require('mongoose');
+var GithubAPI = require('github');
 var Job       = require('./model.js');
 
 module.exports = function(app) {
@@ -25,5 +26,30 @@ module.exports = function(app) {
       if(error){ response.send(error); }
       response.json(request.body);
     })
+  });
+
+  app.post('/github', function(request, response) {
+    var github = new GithubAPI({version: '3.0.0'});
+    var languages = {};
+
+    github.authenticate({
+      type: "oauth",
+      key: '6f743235faeb17bb7656',
+      secret: 'c19c92707442508de2ca6c9efc8e75612cdc4d8b'
+    });
+
+    github
+      .repos
+      .getFromUser(request.body, function(fromUserError, fromUserResponse) {
+        fromUserResponse.forEach(function(repo) {
+          if(!languages[repo.language]) {
+            languages[repo.language] = 1;
+          } else {
+            languages[repo.language]++;
+          }
+        });
+
+        response.json(languages);
+      });
   });
 }
