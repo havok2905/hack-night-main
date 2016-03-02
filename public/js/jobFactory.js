@@ -28,6 +28,10 @@ app.factory('jobFactory', function($http) {
     return jobData;
   }
 
+  function getJob(id) {
+    return $http.post('/job', {id: id});
+  }
+
   function getJobs() {
     return $http.get('/jobs');
   }
@@ -40,7 +44,8 @@ app.factory('jobFactory', function($http) {
     jobFromForm: jobFromForm,
     resetJobForm: resetJobForm,
     getJobs: getJobs,
-    postJob: postJob
+    postJob: postJob,
+    getJob: getJob
   };
 
 });

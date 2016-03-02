@@ -6,16 +6,26 @@ app.controller('mainController', function($scope, githubFactory, jobFactory, com
             .success(function(data) { $scope.jobs = data; })
             .error(function(error) { console.log(error); });
 
-  $scope.getUserLanguages = function() {
+  $scope.compare = function() {
     var username = $scope.github.username;
 
-    githubFactory.getLanguageStats(username)
-                 .success(function(data) {
-                   console.log(data);
-                 })
-                 .error(function(error) {
-                   console.log(error);
-                 });
+    jobFactory.getJob($scope.github.job)
+              .success(function(job) {
+
+                githubFactory.getLanguageStats(username)
+                             .success(function(user) {
+                               console.log(job, user);
+                             })
+                             .error(function(error) {
+                               console.log(error);
+                             });
+
+              })
+              .error(function(error) {
+                console.log(error);
+              });
+
+
   }
 
   $scope.createJob = function() {

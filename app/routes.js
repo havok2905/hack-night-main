@@ -3,8 +3,8 @@ var GithubAPI = require('github');
 var Job       = require('./model.js');
 
 module.exports = function(app) {
-  app.get('/job', function(request, response) {
-    Job.findById('', function(error, job) {
+  app.post('/job', function(request, response) {
+    Job.findById(request.body.id, function(error, job) {
       if(error){ response.send(error); }
       response.json(job);
     });
@@ -30,7 +30,6 @@ module.exports = function(app) {
 
   app.post('/github', function(request, response) {
     var github = new GithubAPI({version: '3.0.0'});
-    var languages = {};
 
     github.authenticate({
       type: "oauth",
@@ -42,11 +41,18 @@ module.exports = function(app) {
       .repos
       .getFromUser(request.body, function(fromUserError, fromUserResponse) {
 
+        var languages = {};
+
         fromUserResponse.forEach(function(repo) {
-          if(!languages[repo.language]) {
-            languages[repo.language] = 0;
-          } else {
-            languages[repo.language]++;
+
+          if(repo.language) {
+            var langName = repo.language.toLowerCase();
+
+            if(languages[langName] === undefined) {
+              languages[langName] = 0;
+            } else {
+              languages[langName]++;
+            }  
           }
         });
 
