@@ -37,5 +37,47 @@
     </ul>
 
     <h2>Create Job</h2>
+    <form>
+      <fieldset>
+        <label>Name</label>
+        <input type='text' ng-model='jobForm.name'/>
+      </fieldset>
+      <fieldset>
+        <label>Html</label>
+        <input type='text' ng-model='jobForm.html'/>
+      </fieldset>
+      <fieldset>
+        <label>CSS</label>
+        <input type='text' ng-model='jobForm.css'/>
+      </fieldset>
+      <fieldset>
+        <label>JavaScript</label>
+        <input type='text' ng-model='jobForm.javascript'/>
+      </fieldset>
+      <fieldset>
+        <label>PHP</label>
+        <input type='text' ng-model='jobForm.php'/>
+      </fieldset>
+      <fieldset>
+        <label>Ruby</label>
+        <input type='text' ng-model='jobForm.ruby'/>
+      </fieldset>
+      <fieldset>
+        <label>Java</label>
+        <input type='text' ng-model='jobForm.java'/>
+      </fieldset>
+      <fieldset>
+        <label>C</label>
+        <input type='text' ng-model='jobForm.c'/>
+      </fieldset>
+      <fieldset>
+        <label>Python</label>
+        <input type='text' ng-model='jobForm.python'/>
+      </fieldset>
+      <fieldset>
+        <button ng-click='createJob()'>Create</button>
+      </fieldset>
+    </form>
+
   </body>
 </html>
