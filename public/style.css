@@ -42,6 +42,13 @@ input {
   padding: 20px;
 }
 
+.result {
+  text-align: center;
+  font-size: 70px;
+  color: #ffffff;inherit;
+  font-weight: bold;
+}
+
 .container {
   margin: 0 auto;
   width: 90%;
@@ -71,13 +78,26 @@ section.third {
   color: #FFFFFF;
 }
 
-ul li {
-  font-weight: 900;
+table {
+  width: 100%;
+  text-align: left;
 }
 
-ul li span {
+thead {
+  border-bottom: solid 1px #bbbbbb;
+}
+
+td, th {
+  padding: 20px 0;
+}
+
+th {
+  font-weight: strong;
+  text-transform: uppercase;
+}
+
+td {
   font-weight: normal;
-  color: #666666;
 }
 
 button {

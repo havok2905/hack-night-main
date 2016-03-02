@@ -15,6 +15,9 @@ app.controller('mainController', function($scope, githubFactory, jobFactory, com
                 githubFactory.getLanguageStats(username)
                              .success(function(user) {
                                console.log(job, user);
+
+                               var result = comparisonFactory.run(job, user);
+                               $scope.result = result;
                              })
                              .error(function(error) {
                                console.log(error);

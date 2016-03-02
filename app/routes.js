@@ -41,18 +41,27 @@ module.exports = function(app) {
       .repos
       .getFromUser(request.body, function(fromUserError, fromUserResponse) {
 
-        var languages = {};
+        var languages = {
+          html:       0,
+          css:        0,
+          javascript: 0,
+          php:        0,
+          ruby:       0,
+          java:       0,
+          c:          0,
+          python:     0
+        };
 
         fromUserResponse.forEach(function(repo) {
 
           if(repo.language) {
             var langName = repo.language.toLowerCase();
 
-            if(languages[langName] === undefined) {
-              languages[langName] = 0;
+            if(languages[langName] === 0) {
+              languages[langName] = 1;
             } else {
               languages[langName]++;
-            }  
+            }
           }
         });
 
